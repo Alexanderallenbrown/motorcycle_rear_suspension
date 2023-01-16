@@ -166,7 +166,7 @@ function draw() {
         ///// now the simulation should be updated. Add the desired output to the global Y data vector
         simytype = document.getElementById("chart_y_axis").value;
         if(simytype== "Shock_Compression"){
-          globalYData.push(-(susp.shockCompression))
+          globalYData.push((susp.shockCompression))
         }
         else if(simytype == "Motion_Ratio"){
           globalYData.push((susp.MR))
