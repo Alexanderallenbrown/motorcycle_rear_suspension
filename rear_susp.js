@@ -165,14 +165,17 @@ function draw() {
 
         ///// now the simulation should be updated. Add the desired output to the global Y data vector
         simytype = document.getElementById("chart_y_axis").value;
-        if(simytype== "Shock Compression"){
+        if(simytype== "Shock_Compression"){
           globalYData.push(-(susp.shockCompression))
         }
-        else if(simytype == "Motion Ratio"){
+        else if(simytype == "Motion_Ratio"){
           globalYData.push((susp.MR))
         }
-        else if(simytype == "Wheel Force"){
-          globalYData.push((susp.shockForce/susp.MR))
+        else if(simytype == "Wheel_Force"){
+          globalYData.push((susp.shockForce/susp.MR)) //this.shockForce/this.MR
+        }
+        else if(simytype=="Wheel_Rate"){
+          globalYData.push((susp.springrate)/susp.MR)
         }
         else{
           print("Simtype Not Supported (dependent)")
